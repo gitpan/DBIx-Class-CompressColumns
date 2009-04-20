@@ -15,7 +15,7 @@ __PACKAGE__->mk_classdata( 'compress_maker' );
 # i.e. first release of 0.XX *must* be 0.XX000. This avoids fBSD ports
 # brain damage and presumably various other packaging systems too
 
-$VERSION = '0.01000';
+$VERSION = '0.01001';
 
 =head1 NAME
 
@@ -139,8 +139,6 @@ sub _compress_column_values{
 		#don't compress null columns
 		my $col_v = $self->get_column( $col );
 
-		warn "col_v: ".Dumper($col_v);
-	    
 		#update column value with encoded value if needed
 		$self->set_column( $col, $self->_get_compressed_binary( $col_v ) );
     }    
